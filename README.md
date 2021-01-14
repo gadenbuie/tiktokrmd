@@ -26,18 +26,9 @@ library(tiktokrmd)
 tt_url <- "https://www.tiktok.com/@aquickspoonful/video/6890681375431691526"
 tt <- tiktok_embed(tt_url)
 
-# in R Markdown, just print the object to embed it
-tt
-```
+## # in R Markdown, just print the object to embed it
+## tt
 
-![[\#cake \#cakes \#dontmixit \#cakelover \#cakelovers \#dumpcake \#food
-\#tiktokfood \#foodtiktok \#easyrecipe \#easyrecipes \#peach \#peaches
-\#cinnamon
-\#fyp](https://www.tiktok.com/@aquickspoonful/video/6890681375431691526)
-by [Sophia
-Wasu](https://www.tiktok.com/@aquickspoonful)](https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/00189a8b703343bd817a3ccaec240f71?x-expires=1610618400&x-signature=O8IFPRzFD1bROnHYSNq84fqGVHA%3D)
-
-``` r
 # Or write a plain markdown version
 tiktok_md(tt)
 #> [1] "![[#cake #cakes #dontmixit #cakelover #cakelovers #dumpcake #food #tiktokfood #foodtiktok #easyrecipe #easyrecipes #peach #peaches #cinnamon #fyp](https://www.tiktok.com/@aquickspoonful/video/6890681375431691526) by [Sophia Wasu](https://www.tiktok.com/@aquickspoonful)](https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/00189a8b703343bd817a3ccaec240f71?x-expires=1610618400&x-signature=O8IFPRzFD1bROnHYSNq84fqGVHA%3D)"
