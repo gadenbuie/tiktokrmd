@@ -31,7 +31,7 @@ tt <- tiktok_embed(tt_url)
 
 # Or write a plain markdown version
 tiktok_md(tt)
-#> [1] "![[#cake #cakes #dontmixit #cakelover #cakelovers #dumpcake #food #tiktokfood #foodtiktok #easyrecipe #easyrecipes #peach #peaches #cinnamon #fyp](https://www.tiktok.com/@aquickspoonful/video/6890681375431691526) by [Sophia Wasu](https://www.tiktok.com/@aquickspoonful)](https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/00189a8b703343bd817a3ccaec240f71?x-expires=1610618400&x-signature=O8IFPRzFD1bROnHYSNq84fqGVHA%3D)"
+#> [1] "![[#cake #cakes #dontmixit #cakelover #cakelovers #dumpcake #food #tiktokfood #foodtiktok #easyrecipe #easyrecipes #peach #peaches #cinnamon #fyp](https://www.tiktok.com/@aquickspoonful/video/6890681375431691526) by [Sophia Wasu](https://www.tiktok.com/@aquickspoonful)](https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/00189a8b703343bd817a3ccaec240f71?x-expires=1610654400&x-signature=ExJZaEMAgxhyXydfgsqgZqU%2B8y8%3D)"
 
 # Or as HTML without the full TikTok embedded player shenanigans
 tiktok_html(tt, include_player = FALSE)
@@ -64,6 +64,19 @@ original sound - Sophia Wasu</a>
 </blockquote>
 
 <!--/html_preserve-->
+
+### ⚠️ Previewing Locally ⚠️
+
+TikTok’s embedding script only works when the page with the embedded
+video is being served. For some reason, it doesn’t seem to work when
+viewing a local file.
+
+The easiest way around this is to use the **Infinite Moon Reader** addin
+(or `inf_mr()`) from [xaringan](https://github.com/yihui/xaringan) to
+render your R Markdown document. If you’re working on a blog post,
+`blogdown::serve_site()` probably works fine. In all cases, you’ll still
+need to preview the rendered page in an external browser, like FireFox,
+Chrome, or Safari.
 
 <h3>Description</h3>
 

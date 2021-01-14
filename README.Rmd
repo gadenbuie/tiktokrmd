@@ -57,6 +57,20 @@ documentation <- h[first_h2:(ex_heading - 1)]
 ```{r child=tmpfile}
 ```
 
+### &#x26A0;&#xFE0F; Previewing Locally &#x26A0;&#xFE0F;
+
+TikTok's embedding script only works when the page with the embedded video is being served. For some reason, it doesn't seem to work when viewing a local file.
+
+The easiest way around this is to use 
+the **Infinite Moon Reader** addin (or `inf_mr()`) 
+from [xaringan](https://github.com/yihui/xaringan) 
+to render your R Markdown document. 
+If you're working on a blog post, 
+`blogdown::serve_site()` probably works fine.
+In all cases, 
+you'll still need to preview the rendered page in an external browser,
+like FireFox, Chrome, or Safari.
+
 ```{r results="asis"}
 cat("```{=html}", documentation, "```", sep = "\n")
 ```
