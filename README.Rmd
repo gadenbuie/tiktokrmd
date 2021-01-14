@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# tiktokrmd
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Embed TikTok videos in R Markdown things!
+
+## Installation
+
+You can install the released version of tictokrmd from GitHub:
+
+``` r
+remotes::install_github("gadenbuie/tiktokrmd")
+```
+
+## How to TikTok in R Markdown
+
+```{r}
+con <- textConnection("h", open = "w", local = TRUE)
+tools::Rd2HTML("man/tiktok.Rd", con)
+close(con)
+first_h2 <- which(grepl("<h2>", h))[1] + 1
+ex_heading <- which(grepl("<h3>Examples</h3>", h))
+ex_pre <- which(grepl("pre>", h))
+ex_pre_start <- ex_pre[length(ex_pre) - 1]
+ex_pre_end <- ex_pre[length(ex_pre)]
+
+example <- paste(h[(ex_pre_start + 1):(ex_pre_end - 1)], collapse = "\n")
+example <- gsub("&lt;", "<", example)
+example <- gsub("&gt;", ">", example)
+example <- paste0("```{r echo=TRUE}\nlibrary(tiktokrmd)\n\n", example, "\n```")
+
+tmpfile <- tempfile(fileext = ".Rmd")
+writeLines(example, tmpfile)
+
+knit_print.tiktok_embed <- function(...) invisible()
+
+documentation <- h[first_h2:(ex_heading - 1)]
+```
+
+### Example
+
+```{r child=tmpfile}
+```
+
+```{r results="asis"}
+cat("```{=html}", documentation, "```", sep = "\n")
+```
+
+```{r}
+unlink(tmpfile)
+```
+

@@ -1,0 +1,20 @@
+Package: tiktokrmd
+Title: Embed 'TikTok' Videos in 'R Markdown'
+Version: 1.0.0
+Authors@R: 
+    person(given = "Garrick",
+           family = "Aden-Buie",
+           role = c("aut", "cre"),
+           email = "garrick@adenbuie.com",
+           comment = c(ORCID = "0000-0002-7111-0077"))
+Description: Get the kids to pay attention to your reports with
+    embedded 'TikTok' videos!
+License: MIT + file LICENSE
+Imports: 
+    htmltools,
+    httr,
+    knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
